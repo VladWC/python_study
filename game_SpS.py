@@ -29,10 +29,6 @@ def chek_round(human_turn, comp_turn):
         return "Ты победил!"  
     elif human_turn == 3 and comp_turn == 1:
         return "Ты проиграл!" 
-
-def total_game_count():
-        total_game = +1
-        return total_game
          
     # Основной цикл
 
