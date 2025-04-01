@@ -31,11 +31,6 @@ def chek_round(human_turn, comp_turn):
     elif human_turn == 3 and comp_turn == 1:
         return "Ты проиграл!"
 
-def show_turns(human, computer):
-    turns = {1: "Камень", 2: "Ножницы", 3: "Бумага"}
-    print(f"Твой выбор: {turns[human]}")
-    print(f"Компьютер: {turns[computer]}")
-
     # Основной цикл
 
 total_game = 0
