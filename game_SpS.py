@@ -4,15 +4,16 @@ def get_user_turn():
     print("1-камень. 2-ножницы. 3-бумага. \n")
     while True:
         try:
-            user_turn=int(input())
-            if user_turn in range(1,4):
+            user_turn = int(input())
+            if user_turn in range(1, 4):
                 break
         except:
-            print("Только число от 1 до 3 !!!!!!")   
+            print("Только число от 1 до 3 !!!!!!")
     return user_turn
 
 def get_comp_turn():
-    return random.randint(1,3)
+    comp_turn = random.randint(1, 3)
+    return comp_turn
 
 def chek_round(human_turn, comp_turn):
     if human_turn == comp_turn:
@@ -26,10 +27,15 @@ def chek_round(human_turn, comp_turn):
     elif human_turn == 2 and comp_turn == 1:
         return "Ты проиграл!"
     elif human_turn == 3 and comp_turn == 2:
-        return "Ты победил!"  
+        return "Ты победил!"
     elif human_turn == 3 and comp_turn == 1:
-        return "Ты проиграл!" 
-         
+        return "Ты проиграл!"
+
+def show_turns(human, computer):
+    turns = {1: "Камень", 2: "Ножницы", 3: "Бумага"}
+    print(f"Твой выбор: {turns[human]}")
+    print(f"Компьютер: {turns[computer]}")
+
     # Основной цикл
 
 total_game = 0
@@ -37,13 +43,25 @@ win_game = 0
 
 while True:
     human_turn = get_user_turn()
+    if human_turn == 1:
+        print("Игрок выбрал Камень")
+    elif human_turn == 2:
+        print("Игрок выбрал Ножницы")
+    elif human_turn == 3:
+        print("Игрок выбрал Бумагу")
     comp_turn = get_comp_turn()
+    if comp_turn == 1:
+        print("Компьютер выбрал Камень")
+    elif comp_turn == 2:
+        print("Компьютер выбрал Ножницы")
+    elif comp_turn == 3:
+        print("Компьютер выбрал Бумагу")
     result = chek_round(human_turn, comp_turn)
     total_game += 1
     if result == "Ты победил!":
         win_game += 1
     print(result)
     print("Всего игр:", total_game, ". Побед:", win_game)
-    user_choise = input("Сыграем ещё? 1-да, 0-нет")
+    user_choise = input("Продолжаем играть! Для отмены нажмите '0'")
     if user_choise == "0":
-        break 
+        break
