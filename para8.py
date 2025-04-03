@@ -1,10 +1,30 @@
 import random
 
-stroka_sum = []
+user_row = int(input("Сколько будет строк? \n"))
+user_columm = int(input("Сколько будет столбцов? \n"))
 
-columm_sum = []
+final_list = []
+elemment_columm = []
 
-user_answer = int(input("1 - вывести сумму строки. \n 2 - вывести сумму столбца."))
+def elemen_random():
+    for i in range(1):
+        value = random.randint(0, 9)
+    return value
+
+# def elemment_columm_random():
+#     for i in range(user_row):
+#         elemment_columm.append(elemen_random())
+#     return elemment_columm
+# print(elemment_columm_random())
+
+def final_list_random():
+    for i in range(user_columm):
+        for j in range(user_row):
+            elemment_columm.append(elemen_random())
+    return final_list
+print(final_list_random())
+
+user_answer = int(input("1 - вывести сумму строки. \n2 - вывести сумму столбца.\n"))
 
 if user_answer == 1:
     print(stroka_sum)
