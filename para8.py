@@ -10,7 +10,7 @@ elemment_columm = []
 def elemen_random():
     for i in range(user_row):
         value = random.randint(0, 9)
-    return value
+    print(value)
 
 
 # def elemment_columm_random():
